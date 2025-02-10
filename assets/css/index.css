@@ -1,0 +1,99 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f6f8fa;
+    margin: 0;
+    padding: 0;
+  }
+
+  .navbar {
+    background-color: #2c3e50;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .navbar .user{
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  .navbar .user img:first-child{
+    margin-right: 5px;
+  }
+  .navbar .user img:last-child{
+    margin-left: 5px;
+  }
+  .navbar .user::after:hover{
+    color: #ff0000;
+  }
+  .container {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 8px;
+    background: white;
+  }
+.table-links{
+  max-width: 900px;
+  margin: 20px auto;
+}
+  .table-caption {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    overflow-x: scroll;
+  }
+
+  thead tr {
+    border-bottom: 1px solid #ddd;
+  }
+
+  tr {
+    border-bottom: 1px solid #dee2e6;
+  }
+
+  th, td {
+    padding: 12px;
+    text-align: left;
+  }
+
+  th {
+    color: #212529;
+  }
+  tr, td:last-child{
+    min-width: 139px;
+  }
+  button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #dee2e6;
+    color: #2c3e50;
+  }
+
+  .btn-add:hover {
+    background-color: #2c3e50;
+    color: #ddd;
+  }
+@media (max-width : 767px) {
+  .container {
+    max-width: 100%;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 8px;
+    background: white;
+    overflow: scroll;
+  }
+  .navbar{
+    font-size: 16px;
+  }
+}

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestion du taches</title>
+  <link rel="stylesheet" href="./assets/css/index.css">
+</head>
+<body>
+  <div class="navbar">
+    <div class="logo">Gestion du taches</div>
+    <div class="user">
+      <img src="./assets/images/user (3).png" alt="">
+      Elhoucein Hamoudi
+      <a href="./auth/login.html"><img src="./assets/images/logout.png" alt="logout">
+      </a>
+    </div>
+  </div>
+
+  <div  class="table-links">
+    <button class="btn-add" onclick="toggleTable('intervenantsContainer')">Intervenants</button>
+    <button class="btn-add" onclick="toggleTable('intervationsContainer')">Interventions</button>
+    <button class="btn-add" onclick="toggleTable('clientsContainer')">Clients</button>
+  </div>
+
+  <!-- Intervenants Table -->
+  <div class="container" id="intervenantsContainer">
+    <div class="table-caption">
+      <h3>Intervenants</h3>
+      <a href="./forms/inervenant.html"><button class="btn-add" onclick="showForm('intervenants')">Add Intervenant</button></a>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Nom</th>
+          <th>Prénom</th>
+          <th>Poste</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="intervenantsTableBody">
+        <tr><td colspan="5">No data available</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Interventions Table -->
+  <div class="container" id="intervationsContainer">
+    <div class="table-caption">
+      <h3>Interventions</h3>
+      <a href="./forms/intervation.html"><button class="btn-add" onclick="showForm('interventions')">Add Intervention</button>
+      </a>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Date</th>
+          <th>Type</th>
+          <th>Motif</th>
+          <th>Etat</th>
+          <th>Intervenant</th>
+          <th>Client</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="interventionsTableBody">
+        <tr><td colspan="8">No data available</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Clients Table -->
+  <div class="container" id="clientsContainer">
+    <div class="table-caption">
+      <h3>Clients</h3>
+      <button class="btn-add" onclick="newClient()">Add Client</button>
+</div>
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Nom</th>
+          <th>Prénom</th>
+          <th>Direction</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="clientsTableBody">
+        <tr><td colspan="5">No data available</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Form to Add Data -->
+  <div id="formContainer" style="display:none;">
+    <div id="formContent">
+      <h3 id="formTitle">Add Data</h3>
+      <label for="name">Name:</label><input type="text" id="name" required><br>
+      <label for="prenom">Prenom:</label><input type="text" id="prenom" required><br>
+      <label for="poste">Poste/Direction:</label><input type="text" id="poste" required><br>
+      <label for="type">Type:</label><input type="text" id="type"><br>
+      <button onclick="addData()">Save</button>
+      <button onclick="closeForm()">Cancel</button>
+    </div>
+  </div>
+
+      <script>
+        function toggleTable(containerId) {
+          const containers = document.querySelectorAll('.container');
+          containers.forEach(container => {
+            container.style.display = container.id === containerId ? 'block' : 'none';
+          });
+        }
+      </script>
+
+
+  <script   src="./assets/js/data.js" ></script>
+  <script   src="./assets/js/gestionIntervations.js" ></script>
+  <script   src="./assets/js/gestionIntervenant.js" ></script>
+  <script   src="./assets/js/gestionClient.js" ></script>
+  <script   src="./assets/js/main.js" ></script>
+</body>
+</html>

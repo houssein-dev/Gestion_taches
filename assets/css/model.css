@@ -1,0 +1,59 @@
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100vw !important;
+    height: 100%;
+    background: rgb(0 0 0 / 24%);
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(2px);
+    z-index: 1000;
+  }
+
+  .modal-content {
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+    /* width: 400px;
+    max-width: 90%; */
+    backdrop-filter: blur(10px);
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .modal-content {
+    background: #ffff;
+    border-radius: 4px;
+    padding: 30px;
+    box-shadow: 0 4px 11px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(4px);
+    margin-left: auto;
+    margin-right: auto;
+    border: 10px double #ccc;
+}
+  .input-field input, .input-field select {
+    /* width: 100%; */
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    margin-top: 12px;
+    background-color: rgba(255, 255, 255, 0.9);
+  }
+
+  .modal-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+
+  .btn-cancel {
+    background-color: #e74c3c;
+  }
+
+  .btn-cancel:hover {
+    background-color: #c0392b;
+  }
+
+  /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25); */

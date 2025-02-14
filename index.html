@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gestion du taches</title>
   <link rel="stylesheet" href="./assets/css/index.css">
+  <link rel="stylesheet" href="./assets/css/form.css">
+
 </head>
 <body>
   <div class="navbar">
@@ -12,22 +14,33 @@
     <div class="user">
       <img src="./assets/images/user (3).png" alt="">
       Elhoucein Hamoudi
-      <a href="./auth/login.html"><img src="./assets/images/logout.png" alt="logout">
+      <!-- <a href="./auth/login.html"><img src="./assets/images/logout.png" alt="logout"> -->
       </a>
     </div>
   </div>
 
-  <div  class="table-links">
-    <button class="btn-add" onclick="toggleTable('intervenantsContainer')">Intervenants</button>
-    <button class="btn-add" onclick="toggleTable('intervationsContainer')">Interventions</button>
-    <button class="btn-add" onclick="toggleTable('clientsContainer')">Clients</button>
-  </div>
 
-  <!-- Intervenants Table -->
-  <div class="container" id="intervenantsContainer">
+
+
+<div class="content">
+  <div class="sidebar">
+    <button class="btn" onclick="toggleTable('clientsContainer')"><i class="fas fa-user-tie"></i> Clients</button>
+    <button class="btn" onclick="toggleTable('intervenantsContainer')"><i class="fas fa-users"></i> Intervenants</button>
+    <button class="btn" onclick="toggleTable('interventionsContainer')"><i class="fas fa-briefcase"></i> Interventions</button>
+  </div>
+  <main>
+    <!-- <div  class="table-links">
+      <button class="btn-add" onclick="toggleTable('intervenantsContainer')">Intervenants</button>
+      <button class="btn-add" onclick="toggleTable('intervationsContainer')">Interventions</button>
+      <button class="btn-add" onclick="toggleTable('clientsContainer')">Clients</button>
+    </div> -->
+    <div class="tables">
+        
+    <!-- Intervenants Table -->
+   <div class="container" id="intervenantsContainer">
     <div class="table-caption">
-      <h3>Intervenants</h3>
-      <a href="./forms/inervenant.html"><button class="btn-add" onclick="showForm('intervenants')">Add Intervenant</button></a>
+      <h3>list des Interventions</h3>
+      <button class="btn-add" onclick="test('addAntervenant')">Add Intervenant</button>
     </div>
     <table>
       <thead>
@@ -44,13 +57,12 @@
       </tbody>
     </table>
   </div>
-
-  <!-- Interventions Table -->
+ <!-- Interventions Table  -->
   <div class="container" id="intervationsContainer">
+
     <div class="table-caption">
-      <h3>Interventions</h3>
-      <a href="./forms/intervation.html"><button class="btn-add" onclick="showForm('interventions')">Add Intervention</button>
-      </a>
+      <h3>list des Interventions</h3>
+      <button class="btn-add" onclick="test('addIntervation')">Add Intervention</button>
     </div>
     <table>
       <thead>
@@ -69,32 +81,91 @@
         <tr><td colspan="8">No data available</td></tr>
       </tbody>
     </table>
-  </div>
+  </div> 
 
-  <!-- Clients Table -->
-  <div class="container" id="clientsContainer">
-    <div class="table-caption">
-      <h3>Clients</h3>
-      <button class="btn-add" onclick="newClient()">Add Client</button>
+    <!-- Clients Table -->
+<div class="container" id="clientsContainer">
+  <div class="table-caption">
+    <h3>list des clients</h3>
+    <button class="btn-add" onclick="test('addClient')">Add Client</button>
 </div>
-    <table>
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>Nom</th>
-          <th>Prénom</th>
-          <th>Direction</th>
-          <th>Actions</th>
-        </tr>
-      </thead>
-      <tbody id="clientsTableBody">
-        <tr><td colspan="5">No data available</td></tr>
-      </tbody>
-    </table>
-  </div>
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Nom</th>
+        <th>Prénom</th>
+        <th>Direction</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody id="clientsTableBody">
+      <tr><td colspan="5">No data available</td></tr>
+    </tbody>
+  </table>
+</div>
+</div>
+  <!-- forms -->
+   <div class="forms" >
+        <form action="" method="post" id="addClient">
+          <div class="formContent">
+            <h3 class="formTitle" id="formTitle">ajouter client1</h3>
+            <label for="name">Name:</label><input type="text" id="name" required><br>
+            <label for="prenom">Prenom:</label><input type="text" id="prenom" required><br>
+            <label for="poste">Direction:</label><input type="text" id="poste" required><br>
+            <label for="type">Type:</label><input type="text" id="type"><br>
+            <button onclick="addData()">Save</button>
+            <button type="reset" onclick="closeForm()">Cancel</button>
+          </div>
+        </form>
+
+        <form action="" method="post" id="addAntervenant">
+          <div class="formContent">
+            <h3 class="formTitle" id="formTitle">ajouter intervenant</h3>
+            <label for="name">Name:</label><input type="text" id="name" required><br>
+            <label for="prenom">Prenom:</label><input type="text" id="prenom" required><br>
+            <label for="poste">Poste:</label><input type="text" id="poste" required><br>
+            <button onclick="addData()">Save</button>
+            <button onclick="closeForm()">Cancel</button>
+          </div>
+        </form>
+
+       <form action="" method="post" id="addIntervation">
+          <div class="formContent">
+            <h3 class="formTitle" id="formTitle">ajouter une intervation</h3>
+            <label for="motif">Motif:</label> <input type="text" id="motif" required><br>
+            <label for="type">Type:</label>     
+            <select id="inputType" id="type">
+              <option value="soft">Soft</option>
+              <option value="hard">Hard</option>
+            </select><br>
+            <label for="date">Date:</label><input type="date" id="date" required><br>
+            <label for="etat">Etat:</label>      
+            <select id="inputEtat" id="etat">
+              <option>En Attente</option>
+              <option>Réalisée</option>
+            </select><br>
+            <label for="clients">client:</label>      
+            <select id="inputClient" id="etat">
+              <option>Habibouallah</option>
+              <option>Zeynaty</option>
+            </select><br>
+            <label for="intervenant">intervenants:</label>      
+            <select id="inputIntervenant" id="etat">
+              <option>Houssein</option>
+              <option>Hsn</option>
+            </select><br>
+            <button onclick="addData()">Save</button>
+            <button onclick="closeForm()">Cancel</button>
+          </div>
+      </form>
+   </div>
+  </main>
+
+
 
   <!-- Form to Add Data -->
-  <div id="formContainer" style="display:none;">
+ <!--  <div id="formContainer" style="display:none;">
     <div id="formContent">
       <h3 id="formTitle">Add Data</h3>
       <label for="name">Name:</label><input type="text" id="name" required><br>
@@ -104,7 +175,38 @@
       <button onclick="addData()">Save</button>
       <button onclick="closeForm()">Cancel</button>
     </div>
+  </div> -->
+
+
+
+<!-- model -->
+
+<!-- <div id="modal" class="modal container">
+  <div class="modal-content">
+    <h3 id="modalTitle"></h3>
+    <div class="input-field" id="nameField"><input type="text" id="inputNom" placeholder="Nom"></div>
+    <div class="input-field" id="surnameField"><input type="text" id="inputPrenom" placeholder="Prénom"></div>
+    <div class="input-field" id="directionField"><input type="text" id="inputDirection" placeholder="Direction"></div>
+    <div class="input-field" id="postField"><input type="text" id="inputPoste" placeholder="Poste"></div>
+    <div class="input-field" id="interventionFields" style="display:none;">
+      <input type="date" id="inputDate">
+      <select id="inputType">
+        <option value="soft">Soft</option>
+        <option value="hard">Hard</option>
+      </select>
+      <input type="text" id="inputMotif" placeholder="Motif">
+      <select id="inputEtat">
+        <option>En Attente</option>
+        <option>Réalisée</option>
+      </select>
+    </div>
+    <div class="modal-buttons">
+      <button class="btn" onclick="closeModal()">Valider</button>
+      <button class="btn btn-cancel" onclick="closeModal()">Annuler</button>
+    </div>
   </div>
+</div> -->
+
 
       <script>
         function toggleTable(containerId) {
@@ -120,6 +222,9 @@
   <script   src="./assets/js/gestionIntervations.js" ></script>
   <script   src="./assets/js/gestionIntervenant.js" ></script>
   <script   src="./assets/js/gestionClient.js" ></script>
+  <script   src="./assets/js/model.js" ></script>
+  <script defer  src="./assets/js/showForm.js" ></script>
+
   <script   src="./assets/js/main.js" ></script>
 </body>
 </html>

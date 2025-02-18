@@ -12,12 +12,12 @@ const data = {
         "Prenom": "Claire",
         "Poste": "Ingénieur"
       },
-      {
-        "IdIntervenant": 3,
-        "Nom": "Bernard",
-        "Prenom": "Luc",
-        "Poste": "Support IT"
-      }
+      // {
+      //   "IdIntervenant": 3,
+      //   "Nom": "Bernard",
+      //   "Prenom": "Luc",
+      //   "Poste": "Support IT"
+      // }
     ],
     "clients": [
       {

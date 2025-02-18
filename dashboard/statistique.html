@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestion du taches</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="../assets/css/index.css">
+  <link rel="stylesheet" href="../assets/css/form.css">
+
+  <!-- jsPdflinks -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.23/jspdf.plugin.autotable.min.js"></script>
+  
+  <!-- charJS -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+<body>
+  <div class="navbar">
+    <div class="logo">Gestion du taches</div>
+    <div class="user">
+      <img src="./assets/images/user (3).png" alt="">
+      Elhoucein Hamoudi
+      <!-- <a href="./auth/login.html"><img src="./assets/images/logout.png" alt="logout"> -->
+      </a>
+    </div>
+  </div>
+
+
+
+
+<div class="content">
+  <div class="sidebar">
+    <button class="btn" onclick="toggleTable('all')"><i class="fas fa-user-tie"></i> Dashboard</button>
+    <a href="/dashboard/statistique.html">    <button class="btn" onclick="toggleTable('clientsContainer')"><i class="fas fa-user-tie"></i> Statistiques</button></a>    
+    <button class="btn" onclick="toggleTable('clientsContainer')"><i class="fas fa-user-tie"></i> Clients</button>
+    <button class="btn" onclick="toggleTable('intervenantsContainer')"><i class="fas fa-users"></i> Intervenants</button>
+    <button class="btn" onclick="toggleTable('intervationsContainer')"><i class="fas fa-briefcase"></i> Interventions</button>
+  </div>
+  <main>
+
+    <div class="static-chart">
+        <div class="static">
+            <!-- <span>Répartition des tâches réalisées vs en attente</span> -->
+            <canvas id="pieChart"></canvas>
+          </div>
+
+
+        <div class="static">
+          <!-- <span>Pourcentage des tâches réalisées par chaque intervenant</span> -->
+          <canvas id="barChart"></canvas>
+        </div>
+        
+
+
+        <div class="static">
+          <canvas id="lineChart"></canvas>
+        </div>
+    </div>
+
+  </main>
+
+
+
+  <script   src="../assets/js/data.js" ></script>
+  <script src="../assets/js/static.js"></script>
+  <script   src="../assets/js/main.js" ></script>
+  <script src="../assets/js/export.js"></script>
+</body>
+</html>

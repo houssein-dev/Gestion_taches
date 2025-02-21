@@ -1,10 +1,26 @@
-fillClientsTable()
-fillInterventionsTable()
-fillIntervenantsTable()
 
+try {
+    fillClientsTable()
 
+} catch (error) {
+    console.log(error)
+}
 
+try {
+    fillInterventionsTable()
 
+} catch (error) {
+    console.log(error)
+
+}
+
+try {
+    fillIntervenantsTable()
+
+} catch (error) {
+    console.log(error)
+
+}
 
 
 

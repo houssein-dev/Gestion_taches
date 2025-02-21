@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestion du taches</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="../assets/css/index.css">
+  <link rel="stylesheet" href="../assets/css/form.css">
+
+  <!-- jsPdflinks -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.23/jspdf.plugin.autotable.min.js"></script>
+  
+  <!-- charJS -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+<body>
+  <div class="navbar">
+    <div class="logo">Gestion du taches</div>
+    <div class="user">
+      <img src="./assets/images/user (3).png" alt="">
+      Elhoucein Hamoudi
+      <!-- <a href="./auth/login.html"><img src="./assets/images/logout.png" alt="logout"> -->
+      </a>
+    </div>
+  </div>
+
+<div class="content">
+    <div class="sidebar">
+        <a href="/index.html"><button class="btn" onclick="toggleTable('all')"><i class="fas fa-user-tie"></i> Dashboard</button></a>
+        <a href="/dashboard/statistique.html">    <button class="btn"><i class="fas fa-user-tie"></i> Statistiques</button></a>    
+        <a href="/dashboard/client.html"><button class="btn" ><i class="fas fa-user-tie"></i> Clients</button></a>    
+        <a href="/dashboard/intervation.html"><button class="btn" ><i class="fas fa-briefcase"></i> Interventions</button></a>
+        <a href="/dashboard/intervenant.html"><button class="btn" ><i class="fas fa-briefcase"></i> inervenants</button></a>
+      </div>
+  <main>
+
+<div class="tables">
+    <!-- Clients Table -->
+<div class="container" id="clientsContainer">
+  <div class="table-caption">
+    <h3>list des clients</h3>
+    <div class="buttonsContainer">
+      <button onclick="generatePDF('client-table')">Exporter en PDF</button>
+      <button class="btn-add" onclick="test('addClient')">Add Client</button>
+    </div>
+</div>
+  <table id="client-table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Nom</th>
+        <th>Prénom</th>
+        <th>Direction</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody id="clientsTableBody">
+      <tr><td colspan="5">No data available</td></tr>
+    </tbody>
+  </table>
+</div>
+</div>
+  <!-- forms -->
+   <div class="forms" >
+        <form action="" method="post" id="addClient">
+          <div class="formContent">
+            <h3 class="formTitle" id="formTitle">ajouter client1</h3>
+            <label for="name">Name:</label><input type="text" id="name" required><br>
+            <label for="prenom">Prenom:</label><input type="text" id="prenom" required><br>
+            <label for="poste">Direction:</label><input type="text" id="poste" required><br>
+            <label for="type">Type:</label><input type="text" id="type"><br>
+            <button onclick="addData()">Save</button>
+            <button type="reset" onclick="closeForm()">Cancel</button>
+          </div>
+        </form>
+
+        <form action="" method="post" id="addAntervenant">
+          <div class="formContent">
+            <h3 class="formTitle" id="formTitle">ajouter intervenant</h3>
+            <label for="name">Name:</label><input type="text" id="name" required><br>
+            <label for="prenom">Prenom:</label><input type="text" id="prenom" required><br>
+            <label for="poste">Poste:</label><input type="text" id="poste" required><br>
+            <button onclick="addData()">Save</button>
+            <button onclick="closeForm()">Cancel</button>
+          </div>
+        </form>
+
+       <form action="" method="post" id="addIntervation">
+          <div class="formContent">
+            <h3 class="formTitle" id="formTitle">ajouter une intervation</h3>
+            <label for="motif">Motif:</label> <input type="text" id="motif" required><br>
+            <label for="type">Type:</label>     
+            <select id="inputType" id="type">
+              <option value="soft">Soft</option>
+              <option value="hard">Hard</option>
+            </select><br>
+            <label for="date">Date:</label><input type="date" id="date" required><br>
+            <label for="etat">Etat:</label>      
+            <select id="inputEtat" id="etat">
+              <option>En Attente</option>
+              <option>Réalisée</option>
+            </select><br>
+            <label for="clients">client:</label>      
+            <select id="inputClient" id="etat">
+              <option>Habibouallah</option>
+              <option>Zeynaty</option>
+            </select><br>
+            <label for="intervenant">intervenants:</label>      
+            <select id="inputIntervenant" id="etat">
+              <option>Houssein</option>
+              <option>Hsn</option>
+            </select><br>
+            <button onclick="addData()">Save</button>
+            <button onclick="closeForm()">Cancel</button>
+          </div>
+      </form>
+   </div>
+  </main>
+
+
+  <script   src="../assets/js/data.js" ></script>
+  <script src="../assets/js/static.js"></script>
+  <script   src="../assets/js/gestionIntervations.js" ></script>
+  <script   src="../assets/js/gestionIntervenant.js" ></script>
+  <script   src="../assets/js/gestionClient.js" ></script>
+  <script   src="../assets/js/model.js" ></script>
+  <script defer  src="../assets/js/showForm.js" ></script>
+
+  <script   src="../assets/js/main.js" ></script>
+  <script src="../assets/js/export.js"></script>
+</body>
+</html>

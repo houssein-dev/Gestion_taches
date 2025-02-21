@@ -52,6 +52,7 @@ body {
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
     z-index: 1000;
     padding-top: 12rem;
+    position: fixed;
 
   }
 
@@ -80,6 +81,8 @@ body {
   main{
     padding: 1.5rem;
     padding-top: 6rem;
+    margin-left: 160px;
+
   }
   .container {
     min-width: 700px;
@@ -181,11 +184,11 @@ caption{
     padding-left: 2rem;
   }
   .sidebar{
-    display: none;
-  }
+margin-left: -160px;  }
   main {
     max-width: 92vw;
     padding: 1rem;
     padding-top: 6rem;
+    margin-left: 0;
 }
 }

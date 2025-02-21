@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestion du taches</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="../assets/css/index.css">
+  <link rel="stylesheet" href="../assets/css/form.css">
+
+  <!-- jsPdflinks -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.23/jspdf.plugin.autotable.min.js"></script>
+  
+  <!-- charJS -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+<body>
+  <div class="navbar">
+    <div class="logo">Gestion du taches</div>
+    <div class="user">
+      <img src="../assets/images/user (3).png" alt="">
+      Elhoucein Hamoudi
+      <!-- <a href="../auth/login.html"><img src="../assets/images/logout.png" alt="logout"> -->
+      </a>
+    </div>
+  </div>
+
+<div class="content">......../  
+  <main>
+    <div class="tables">
+        <!-- Interventions Table  -->
+        <div class="container" id="intervationsContainer">
+            <div class="table-caption">
+            <h3>list des Interventions</h3>
+            <div class="buttonsContainer">
+                <button onclick="generatePDF('intervation-table')">Exporter en PDF</button>
+                <button class="btn-add" onclick="test('addIntervation')">Add Intervention</button>
+            </div>
+            </div>
+            <table>
+            <thead>
+                <tr>
+                <th>#</th>
+                <th>Date</th>
+                <th>Type</th>
+                <th>Motif</th>
+                <th>Etat</th>
+                <th>Intervenant</th>
+                <th>Client</th>
+                <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="interventionsTableBody">
+                <tr><td colspan="8">No data available</td></tr>
+            </tbody>
+            </table>
+        </div> 
+    </div>
+  <!-- forms -->
+   <div class="forms" >
+       <form action="" method="post" id="addIntervation">
+          <div class="formContent">
+            <h3 class="formTitle" id="formTitle">ajouter une intervation</h3>
+            <label for="motif">Motif:</label> <input type="text" id="motif" required><br>
+            <label for="type">Type:</label>     
+            <select id="inputType" id="type">
+              <option value="soft">Soft</option>
+              <option value="hard">Hard</option>
+            </select><br>
+            <label for="date">Date:</label><input type="date" id="date" required><br>
+            <label for="etat">Etat:</label>      
+            <select id="inputEtat" id="etat">
+              <option>En Attente</option>
+              <option>Réalisée</option>
+            </select><br>
+            <label for="clients">client:</label>      
+            <select id="inputClient" id="etat">
+              <option>Habibouallah</option>
+              <option>Zeynaty</option>
+            </select><br>
+            <label for="intervenant">intervenants:</label>      
+            <select id="inputIntervenant" id="etat">
+              <option>Houssein</option>
+              <option>Hsn</option>
+            </select><br>
+            <button onclick="addData()">Save</button>
+            <button onclick="closeForm()">Cancel</button>
+          </div>
+      </form>
+   </div>
+  </main>
+
+  <script   src="../assets/js/data.js" ></script>
+  <script src="../assets/js/static.js"></script>
+  <script   src="../assets/js/gestionIntervations.js" ></script>
+  <script   src="../assets/js/gestionIntervenant.js" ></script>
+  <script   src="../assets/js/gestionClient.js" ></script>
+  <script   src="../assets/js/model.js" ></script>
+  <script defer  src="../assets/js/showForm.js" ></script>
+
+  <script   src="../assets/js/main.js" ></script>
+  <script src="../assets/js/export.js"></script>
+</body>
+</html>

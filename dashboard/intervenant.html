@@ -20,7 +20,7 @@
   <div class="navbar">
     <div class="logo">Gestion du taches</div>
     <div class="user">
-      <img src="./assets/images/user (3).png" alt="">
+      <img src="../assets/images/user (3).png" alt="">
       Elhoucein Hamoudi
       <!-- <a href="./auth/login.html"><img src="./assets/images/logout.png" alt="logout"> -->
       </a>
@@ -39,32 +39,55 @@
     <a href="/dashboard/intervenant.html"><button class="btn" ><i class="fas fa-briefcase"></i> inervenants</button></a>
   </div>
   <main>
-
-    <div class="static-chart">
-        <div class="static">
-            <!-- <span>Répartition des tâches réalisées vs en attente</span> -->
-            <canvas id="pieChart"></canvas>
+        <div class="tables">
+    <!-- Intervenants Table -->
+    <div class="container" id="intervenantsContainer">
+        <div class="table-caption">
+          <h3>list des Intervenant</h3>
+          <div class="buttonsContainer">
+            <button onclick="generatePDF('intervation-table')">Exporter en PDF</button>
+            <button class="btn-add" onclick="test('addAntervenant')">Add Intervenant</button>
           </div>
-
-
-        <div class="static">
-          <!-- <span>Pourcentage des tâches réalisées par chaque intervenant</span> -->
-          <canvas id="barChart"></canvas>
         </div>
-        
-
-
-        <div class="static">
-          <canvas id="lineChart"></canvas>
+        <table id="intervation-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Nom</th>
+              <th>Prénom</th>
+              <th>Poste</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="intervenantsTableBody">
+            <tr><td colspan="5">No data available</td></tr>
+          </tbody>
+        </table>
+      </div>
+            <!-- Clients Table -->
         </div>
-    </div>
-
   </main>
 
 
 
+      <!-- <script>
+        function toggleTable(containerId) {
+          const containers = document.querySelectorAll('.container');
+          containers.forEach(container => {
+            container.style.display = container.id === containerId ||  containerId=='all'   ?'block' : 'none';
+          });
+        }
+      </script> -->
+
+
   <script   src="../assets/js/data.js" ></script>
   <script src="../assets/js/static.js"></script>
+  <script   src="../assets/js/gestionIntervations.js" ></script>
+  <script   src="../assets/js/gestionIntervenant.js" ></script>
+  <!-- <script   src="../assets/js/gestionClient.js" ></script> -->
+  <script   src="../assets/js/model.js" ></script>
+  <script defer  src="../assets/js/showForm.js" ></script>
+
   <script   src="../assets/js/main.js" ></script>
   <script src="../assets/js/export.js"></script>
 </body>

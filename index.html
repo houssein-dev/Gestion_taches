@@ -32,25 +32,21 @@
 
 <div class="content">
   <div class="sidebar">
-    <button class="btn" onclick="toggleTable('all')"><i class="fas fa-user-tie"></i> Dashboard</button>
-    <a href="./dashboard/statistique.html">    <button class="btn" onclick="toggleTable('clientsContainer')"><i class="fas fa-user-tie"></i> Statistiques</button></a>    
-    <button class="btn" onclick="toggleTable('clientsContainer')"><i class="fas fa-user-tie"></i> Clients</button>
-    <button class="btn" onclick="toggleTable('intervenantsContainer')"><i class="fas fa-users"></i> Intervenants</button>
-    <button class="btn" onclick="toggleTable('intervationsContainer')"><i class="fas fa-briefcase"></i> Interventions</button>
+    <a href="/index.html"><button class="btn" onclick="toggleTable('all')"><i class="fas fa-user-tie"></i> Dashboard</button></a>
+    <a href="/dashboard/statistique.html">    <button class="btn"><i class="fas fa-user-tie"></i> Statistiques</button></a>    
+    <a href="/dashboard/client.html"><button class="btn" ><i class="fas fa-user-tie"></i> Clients</button></a>    
+    <a href="/dashboard/intervation.html"><button class="btn" ><i class="fas fa-briefcase"></i> Interventions</button></a>
+    <a href="/dashboard/intervenant.html"><button class="btn" ><i class="fas fa-briefcase"></i> inervenants</button></a>
   </div>
   <main>
-    <!-- <div  class="table-links">
-      <button class="btn-add" onclick="toggleTable('intervenantsContainer')">Intervenants</button>
-      <button class="btn-add" onclick="toggleTable('intervationsContainer')">Interventions</button>
-      <button class="btn-add" onclick="toggleTable('clientsContainer')">Clients</button>
-    </div> -->
+
 
 
     <div class="tables">
     <!-- Intervenants Table -->
    <div class="container" id="intervenantsContainer">
     <div class="table-caption">
-      <h3>list des Interventions</h3>
+      <h3>list des Intervenant</h3>
       <div class="buttonsContainer">
         <button onclick="generatePDF('intervation-table')">Exporter en PDF</button>
         <button class="btn-add" onclick="test('addAntervenant')">Add Intervenant</button>
@@ -227,15 +223,6 @@
   </div>
 </div> -->
 
-
-      <script>
-        function toggleTable(containerId) {
-          const containers = document.querySelectorAll('.container');
-          containers.forEach(container => {
-            container.style.display = container.id === containerId ||  containerId=='all'   ?'block' : 'none';
-          });
-        }
-      </script>
 
 
   <script   src="./assets/js/data.js" ></script>
